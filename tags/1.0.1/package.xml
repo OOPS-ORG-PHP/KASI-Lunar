@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.9.4" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
+ <name>KASI_Lunar</name>
+ <channel>pear.oops.org</channel>
+ <summary>Solar/Lunar Convert API</summary>
+ <description>Solar/Lunar convert API with KASI data</description>
+ <lead>
+  <name>JoungKyun.Kim</name>
+  <user>joungkyun</user>
+  <email>joungkyun@gmail.com</email>
+  <active>yes</active>
+ </lead>
+ <date>2015-12-07</date>
+ <time>15:44:46</time>
+ <version>
+  <release>1.0.1</release>
+  <api>1.0.0</api>
+ </version>
+ <stability>
+  <release>stable</release>
+  <api>stable</api>
+ </stability>
+ <license uri="http://opensource.org/licenses/GPL-2.0">GPL v2</license>
+ <notes>
+* add jd(julian date) in return value of tolunar method
+* add week in return value of tolunar method
+* deprecated cal4jd method. use jd2cal method
+ </notes>
+ <contents>
+  <dir name="/">
+   <file md5sum="9b29c7f4885256d399e8263e70c40805" name="KASI_Lunar.php" role="php" />
+   <file md5sum="d9c1bdc603c87919b1245c177f773621" name="KASI_Lunar/Lunar_Tables.php" role="php" />
+  </dir>
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>5.3.0</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.3</min>
+   </pearinstaller>
+   <package>
+    <name>myException</name>
+    <channel>pear.oops.org</channel>
+    <min>1.0.1</min>
+   </package>
+   <package>
+    <name>calendar</name>
+    <channel>php</channel>
+   </package>
+  </required>
+ </dependencies>
+ <phprelease />
+ <changelog>
+  <release>
+   <version>
+    <release>1.0.1</release>
+    <api>1.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2015-12-07</date>
+   <license uri="http://opensource.org/licenses/GPL-2.0">GPL v2</license>
+   <notes>
+* add jd(julian date) in return value of tolunar method
+* add week in return value of tolunar method
+* deprecated cal4jd method. use jd2cal method
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>1.0.0</release>
+    <api>1.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2015-12-07</date>
+   <license uri="http://opensource.org/licenses/GPL-2.0">GPL v2</license>
+   <notes>
+* 1.0.0 release
+   </notes>
+  </release>
+ </changelog>
+</package>
