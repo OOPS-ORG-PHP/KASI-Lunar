@@ -176,7 +176,7 @@ class Lunar {
 	 * @param bool 윤달여부
 	 */
 	public function tosolar ($v = null, $leap = false) {
-		list ($y, $m, $d) = $this->toargs ($v);
+		list ($y, $m, $d) = $this->toargs ($v, true);
 
 		$yer = $y - Tables::$BaseYear;
 
@@ -381,12 +381,16 @@ class Lunar {
 	 *   - Ymd or Y-m-d
 	 *   - null data (현재 시간)
 	 */
-	private function toargs (&$v) {
+	private function toargs (&$v, $lunar = false) {
 		if ( $v == null ) {
 			$y = (int) date ('Y');
 			$m = (int) date ('m');
 			$d = (int) date ('d');
 		} else {
+			if ( $lunar ) {
+
+			}
+
 			if ( is_numeric ($v) && $v > 30000000 ) {
 				// unit stamp ?
 				$y = (int) date ('Y', $v);
@@ -402,7 +406,7 @@ class Lunar {
 				}
 			}
 
-			if ( $y > 1969 && $y < 2038 ) {
+			if ( ! $lunar && $y > 1969 && $y < 2038 ) {
 				$fixed = mktime (0, 0, 0, $m, $d, $y);
 				$y = (int) date ('Y', $fixed);
 				$m = (int) date ('m', $fixed);
@@ -414,6 +418,7 @@ class Lunar {
 				}
 			}
 		}
+		$v = $this->datestring ($y, $m, $d, '-');
 
 		return array ($y, $m, $d);
 	}
