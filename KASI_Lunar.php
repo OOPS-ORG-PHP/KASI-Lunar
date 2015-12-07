@@ -80,6 +80,7 @@ class Lunar {
 	 *   <pre>
 	 *   stdClass Object
 	 *   (
+	 *       [fmt]    => 2013-06-09       // YYYY-MM-DD 형식의 음력 날자
 	 *       [jd]     => 2456582          // 율리어스 적일
 	 *       [year]   => 2013             // 연도
 	 *       [month]  => 6                // 월
@@ -109,13 +110,13 @@ class Lunar {
 			return false;
 		}
 
-		$jd -= Tables::$MinDate;
+		$day = $jd - Tables::$MinDate;
 
-		$mon = $this->bisect (Tables::$month, $jd);
+		$mon = $this->bisect (Tables::$month, $day);
 		$yer = $this->bisect (Tables::$year, $mon);
 
 		$month = $mon - Tables::$year[$yer] + 1;
-		$days  = $jd  - Tables::$month[$mon] + 1;
+		$days  = $day  - Tables::$month[$mon] + 1;
 
 		// 큰달 작은달 체크
 		$lmoon = Tables::$month[$mon+1] - Tables::$month[$mon];
@@ -133,6 +134,7 @@ class Lunar {
 
 		return (object) array (
 			'fmt'   => $this->datestring ($year, $month, $days, '-'),
+			'jd'    => $jd,
 			'year'  => $year,
 			'month' => $month,
 			'day'   => $days,
@@ -155,11 +157,12 @@ class Lunar {
 	 *   <pre>
 	 *   stdClass Object
 	 *   (
-	 *       [jd] => 2456527             // 율리어스 적일
-	 *       [year] => 2013              // 양력 연도
+	 *       [fmt]   => 2013-06-09       // YYYY-MM-DD 형식의 음력 날자
+	 *       [jd]    => 2456527          // 율리어스 적일
+	 *       [year]  => 2013             // 양력 연도
 	 *       [month] => 7                // 월
-	 *       [day] => 16                 // 일
-	 *       [week] => 6                 // 요일
+	 *       [day]   => 16               // 일
+	 *       [week]  => 6                // 요일
 	 *   )
 	 *   </pre>
 	 *
