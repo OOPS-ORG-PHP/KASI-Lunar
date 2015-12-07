@@ -357,7 +357,7 @@ class Lunar {
 	}
 	// }}}
 
-	// {{{ +-- private (array) toargs ($v)
+	// {{{ +-- private (array) toargs ($v, $lanur = false)
 	/**
 	 * 입력된 날자 형식을 연/월/일의 멤버를 가지는 배열로 반환한다.
 	 * 입력된 변수 값은 YYYY-MM-DD 형식으로 변환 된다.
