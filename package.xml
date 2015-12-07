@@ -12,7 +12,7 @@
 		<active>yes</active>
 	</lead>
 	<date>2015-12-07</date>
-	<time>15:38:01</time>
+	<time>15:43:26</time>
 	<version>
 		<release>1.0.1</release>
 		<api>1.0.0</api>
@@ -24,10 +24,11 @@
 	<license uri="http://opensource.org/licenses/GPL-2.0">GPL v2</license>
 	<notes>* add jd(julian date) in return value of tolunar method
 * add week in return value of tolunar method
+* deprecated cal4jd method. use jd2cal method
 </notes>
 	<contents>
 		<dir name="/">
-			<file role="php" md5sum="b6418ceabca07d2b3c2aa738854d33fe" name="KASI_Lunar.php" />
+			<file role="php" md5sum="76740e609ff1f3a5330b5a9f6ec2f9d7" name="KASI_Lunar.php" />
 			<file role="php" md5sum="d9c1bdc603c87919b1245c177f773621" name="KASI_Lunar/Lunar_Tables.php" />
 		</dir>
 	</contents>
@@ -65,6 +66,7 @@
 			<license uri="http://opensource.org/licenses/GPL-2.0">GPL v2</license>
 			<notes>* add jd(julian date) in return value of tolunar method
 * add week in return value of tolunar method
+* deprecated cal4jd method. use jd2cal method
 </notes>
 		</release>
 		<release>

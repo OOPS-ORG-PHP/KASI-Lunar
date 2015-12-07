@@ -198,7 +198,7 @@ class Lunar {
 		}
 
 		$day += Tables::$MinDate;
-		$r = $this->cal4jd ($day);
+		$r = $this->jd2cal ($day);
 
 		return (object) array (
 			'fmt'   => $this->datestring ($r->year, $r->month, $r->day, '-'),
@@ -256,6 +256,36 @@ class Lunar {
 	/**
 	 * 율리우스 적일을 율리우스력 또는 그레고리력으로 변환
 	 *
+	 * oops\KASI\Lunar::jd2cal 의 alias method로 deprecated
+	 * 되었기 때문에 jd2cal method로 변경 해야 함.
+	 *
+	 * 1.0.2 부터 삭제 예정
+	 *
+	 * @access public
+	 * @return stdClass    율리우스력 또는 그레고리력 정보
+	 *
+	 *   <pre>
+	 *   stdClass Object
+	 *   (
+	 *       [year] => 2013              // 양력 연도
+	 *       [month] => 7                // 월
+	 *       [day] => 16                 // 일
+	 *       [week] => 6                 // 요일
+	 *   )
+	 *   </pre>
+	 *
+	 * @param int 율리우스 적일. [default: 현재날의 적일]
+	 * @deprecated deprecated since version 1.0.1
+	 */
+	public function cal4jd ($jd = null) {
+		return $this->jd2cal ($jd);
+	}
+	// }}}
+
+	// {{{ +-- public (object) jd2cal ($jd = null)
+	/**
+	 * 율리우스 적일을 율리우스력 또는 그레고리력으로 변환
+	 *
 	 * @access public
 	 * @return stdClass    율리우스력 또는 그레고리력 정보
 	 *
@@ -271,7 +301,7 @@ class Lunar {
 	 *
 	 * @param int 율리우스 적일. [default: 현재날의 적일]
 	 */
-	public function cal4jd ($jd = null) {
+	public function jd2cal ($jd = null) {
 		if ( ! extension_loaded ('calendar') ) {
 			throw new EXCEPTION ('Don\'t support the calendar extension in PHP', E_USER_ERROR);
 			return false;
