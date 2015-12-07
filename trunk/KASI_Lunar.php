@@ -336,14 +336,14 @@ class Lunar {
 	 * @param int 율리우스 적일. [default: 현재날의 적일]
 	 */
 	public function jd2week ($jd = null) {
-		if ( ! extension_loaded ('calendar') ) {
-			throw new \myException ('Don\'t support the calendar extension in PHP', E_USER_ERROR);
-			return false;
+		if ( ! $jd ) {
+			$today = date ('Y-m-d', time ());
+			$t = preg_split ('/-/', $today);
+			$jd = $this->cal2jd ($t);
 		}
 
-		if ( ! $jd )
-			$jd = unixtojd (time ());
-
+		return fmod ($jd + 1, 7);
+		/*
 		$mjd = $jd - 2400000.5;
 		$widx = $mjd % 7 + 3;
 		if ( $widx < 3 )
@@ -353,6 +353,7 @@ class Lunar {
 			$widx -= 7;
 
 		return $widx;
+		 */
 	}
 	// }}}
 
@@ -413,7 +414,6 @@ class Lunar {
 				}
 			}
 		}
-		$v = $this->datestring ($y, $m, $d);
 
 		return array ($y, $m, $d);
 	}
