@@ -12,7 +12,7 @@
 		<active>yes</active>
 	</lead>
 	<date>2015-12-07</date>
-	<time>18:23:26</time>
+	<time>19:10:38</time>
 	<version>
 		<release>1.0.2</release>
 		<api>1.0.0</api>
@@ -22,11 +22,11 @@
 		<api>stable</api>
 	</stability>
 	<license uri="http://opensource.org/licenses/GPL-2.0">GPL v2</license>
-	<notes>
+	<notes>* fixed wrong date on oops\KASI\Lunar::jd2week
 </notes>
 	<contents>
 		<dir name="/">
-			<file role="php" md5sum="40535a928364da63ca2e6281ed7bdea8" name="KASI_Lunar.php" />
+			<file role="php" md5sum="20faa5f8692de2116572130996910c13" name="KASI_Lunar.php" />
 			<file role="php" md5sum="d9c1bdc603c87919b1245c177f773621" name="KASI_Lunar/Lunar_Tables.php" />
 		</dir>
 	</contents>
@@ -62,7 +62,7 @@
 			</stability>
 			<date>2015-12-07</date>
 			<license uri="http://opensource.org/licenses/GPL-2.0">GPL v2</license>
-			<notes>
+			<notes>* fixed wrong date on oops\KASI\Lunar::jd2week
 </notes>
 		</release>
 		<release>
