@@ -28,7 +28,7 @@
  */
 
 /**
- * Namespace oops;
+ * Namespace oops\KASI;
  */
 namespace oops\KASI;
 

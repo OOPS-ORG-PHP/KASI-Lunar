@@ -16,6 +16,9 @@
  * @filesource
  */
 
+/**
+ * Namespace oops\KASI
+ */
 namespace oops\KASI;
 
 /**
