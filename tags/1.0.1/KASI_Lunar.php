@@ -193,7 +193,7 @@ class Lunar {
 
 		$day = Tables::$month[$month] + $d - 1;
 		if ( $d < 1 || $day >= Tables::$month[$month+1] ) {
-			throw new EXCEPTION ('Invalid day', E_USER_ERROR);
+			throw new \myException ('Invalid day', E_USER_ERROR);
 			return false;
 		}
 
@@ -221,7 +221,7 @@ class Lunar {
 	 */
 	public function cal2jd ($v) {
 		if ( ! extension_loaded ('calendar') ) {
-			throw new EXCEPTION ('Don\'t support the calendar extension in PHP', E_USER_ERROR);
+			throw new \myException ('Don\'t support the calendar extension in PHP', E_USER_ERROR);
 			return false;
 		}
 
@@ -303,7 +303,7 @@ class Lunar {
 	 */
 	public function jd2cal ($jd = null) {
 		if ( ! extension_loaded ('calendar') ) {
-			throw new EXCEPTION ('Don\'t support the calendar extension in PHP', E_USER_ERROR);
+			throw new \myException ('Don\'t support the calendar extension in PHP', E_USER_ERROR);
 			return false;
 		}
 
@@ -337,7 +337,7 @@ class Lunar {
 	 */
 	public function jd2week ($jd = null) {
 		if ( ! extension_loaded ('calendar') ) {
-			throw new EXCEPTION ('Don\'t support the calendar extension in PHP', E_USER_ERROR);
+			throw new \myException ('Don\'t support the calendar extension in PHP', E_USER_ERROR);
 			return false;
 		}
 
