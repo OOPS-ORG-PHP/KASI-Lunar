@@ -138,6 +138,7 @@ class Lunar {
 			'year'  => $year,
 			'month' => $month,
 			'day'   => $days,
+			'week'  => $this->jd2week ($jd),
 			'leap'  => $leap,
 			'lmoon' => $lmoon
 		);
@@ -290,6 +291,38 @@ class Lunar {
 			'day'   => $r->day,
 			'week'  => $r->dow
 		);
+	}
+	// }}}
+
+	// {{{ +-- public (int) jd2week ($jd = null)
+	/**
+	 * 율리우스 적일로 요일 정보를 구함
+	 *
+	 * @access public
+	 * @return int         요일 배열 인덱스
+	 *
+	 * 0(일) ~ 6(토)
+	 *
+	 * @param int 율리우스 적일. [default: 현재날의 적일]
+	 */
+	public function jd2week ($jd = null) {
+		if ( ! extension_loaded ('calendar') ) {
+			throw new EXCEPTION ('Don\'t support the calendar extension in PHP', E_USER_ERROR);
+			return false;
+		}
+
+		if ( ! $jd )
+			$jd = unixtojd (time ());
+
+		$mjd = $jd - 2400000.5;
+		$widx = $mjd % 7 + 3;
+		if ( $widx < 3 )
+			$widx += 7;
+
+		if ( $widx > 6 )
+			$widx -= 7;
+
+		return $widx;
 	}
 	// }}}
 
