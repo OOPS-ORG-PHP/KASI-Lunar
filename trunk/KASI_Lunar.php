@@ -7,7 +7,7 @@
  *   - {@link http://kr1.php.net/manual/en/book.calendar.php calendar extension}
  *
  * 이 패키지는 한국천문연구원의 음양력 데이터를 기반으로 하여 양력/음열간의 변환을
- * 제공한다.
+ * 제공하며, aero님의 Date-Korean-0.0.2 perl module을 PHP로 포팅한 것입니다.
  *
  * 양력 기준으로 1391-02-05 부터 2050-12-31 까지의 기간만 가능하며, 절기, 합삭/망
  * 정보, 세차/월간/일진등의 정보는 oops\Lumar pear package를 이용하독 한다.

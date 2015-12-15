@@ -11,10 +11,10 @@
 		<email>joungkyun@gmail.com</email>
 		<active>yes</active>
 	</lead>
-	<date>2015-12-07</date>
-	<time>21:02:58</time>
+	<date>2015-12-15</date>
+	<time>22:29:27</time>
 	<version>
-		<release>1.0.2</release>
+		<release>1.0.3</release>
 		<api>1.0.0</api>
 	</version>
 	<stability>
@@ -22,13 +22,12 @@
 		<api>stable</api>
 	</stability>
 	<license uri="http://opensource.org/licenses/GPL-2.0">GPL v2</license>
-	<notes>* fixed wrong date on oops\KASI\Lunar::jd2week
-* fixed wrong convert give date on oops\KASI\Lunar::tosolar
+	<notes>* add original copyrighter
 </notes>
 	<contents>
 		<dir name="/">
-			<file role="php" md5sum="89e1601e0c638109127d2d885b3ab8ab" name="KASI_Lunar.php" />
-			<file role="php" md5sum="d9c1bdc603c87919b1245c177f773621" name="KASI_Lunar/Lunar_Tables.php" />
+			<file role="php" md5sum="15cb73b23dc81b5f4a63d310e2a69db6" name="KASI_Lunar.php" />
+			<file role="php" md5sum="7c14ed5958ce4ecc0c02f326e0bf028f" name="KASI_Lunar/Lunar_Tables.php" />
 		</dir>
 	</contents>
 	<dependencies>
@@ -52,6 +51,20 @@
 	</dependencies>
 	<phprelease />
 	<changelog>
+		<release>
+			<version>
+				<release>1.0.3</release>
+				<api>1.0.0</api>
+			</version>
+			<stability>
+				<release>stable</release>
+				<api>stable</api>
+			</stability>
+			<date>2015-12-15</date>
+			<license uri="http://opensource.org/licenses/GPL-2.0">GPL v2</license>
+			<notes>
+</notes>
+		</release>
 		<release>
 			<version>
 				<release>1.0.2</release>
