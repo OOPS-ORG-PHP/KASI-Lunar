@@ -33,7 +33,7 @@ Discovery of channel "pear.oops.org" succeeded
 ```
 
 * dependency
-  * [myException](http://mirror.oops.org/pub/oops/php/pear/myException/)
+  * [myException](https://github.com/OOPS-ORG-PHP/myException/)
   * pear 명령으로 설치시, myException package는 자동으로 설치 됨.
   
 ### Sample codes
