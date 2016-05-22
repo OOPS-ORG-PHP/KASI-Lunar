@@ -1,5 +1,8 @@
 # KASI-Lunar
 
+[![GitHub license](https://img.shields.io/badge/license-GPLv2-blue.svg)](http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt)
+
+
 Solar/Lunar convert API with KASI(한국 천문 과학 연구원) data
 
 ### Description
