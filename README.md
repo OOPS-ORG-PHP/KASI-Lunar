@@ -32,9 +32,12 @@ Discovery of channel "pear.oops.org" succeeded
 [root@host ~]$ pear install oops/Lunar
 ```
 
-* dependency
-  * [myException](https://github.com/OOPS-ORG-PHP/myException/)
-  * pear 명령으로 설치시, myException package는 자동으로 설치 됨.
+### dependency
+  * PHP >= 5.3.0
+  * PHP extensions
+    * calendar
+  * Pear pakcages
+    * [myException](https://github.com/OOPS-ORG-PHP/myException/) >= 1.0.1
   
 ### Sample codes
 ```php
