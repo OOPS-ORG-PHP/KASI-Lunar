@@ -1,6 +1,6 @@
 # KASI-Lunar
 
-Solar/Lunar convert API with KASI data
+Solar/Lunar convert API with KASI(한국 천문 과학 연구원) data
 
 ### Description
 
