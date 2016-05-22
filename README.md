@@ -5,13 +5,13 @@ Solar/Lunar convert API with KASI data
 ### Description
 
 이 패키지는 한국천문연구원의 음양력 데이터를 기반으로 하여 양력/음열간의 변환을
-제공하며, aero님의 Date-Korean-0.0.2 perl module을 PHP로 포팅한 것 입니다.
+제공하며, [aero[(http://aero.sarang.net/)님의 [Date-Korean-0.0.2](http://search.cpan.org/~aero/Date-Korean-0.0.2/) perl module을 PHP로 포팅한 것 입니다.
 
 양력 기준으로 1391-02-05 부터 2050-12-31 까지의 기간만 가능하며, 절기, 합삭/망
 정보, 세차/월간/일진등의 정보는 oops\Lumar pear package를 이용하도록 합니다.
 
-이 패키지는 pear/Lunar package의 확장을 위하여 제작이 되었으며, 라이센스 문제로
-pear/Lunar package와 별도의 패키지로 제작이 되었습니다.
+이 패키지는 [Lunar](https://github.com/OOPS-ORG-PHP/Lunar/) pear package의 확장을 위하여 제작이 되었으며, 라이센스 문제로
+[Lunar](https://github.com/OOPS-ORG-PHP/Lunar/) pear package와 별도의 패키지로 제작이 되었습니다. (물론 독립적으로도 사용을 할 수 있습니다.)
 
 ### License
 
