@@ -10,7 +10,7 @@
  * 제공하며, aero님의 Date-Korean-0.0.2 perl module을 PHP로 포팅한 것이다.
  *
  * 양력 기준으로 1391-02-05 부터 2050-12-31 까지의 기간만 가능하며, 절기, 합삭/망
- * 정보, 세차/월간/일진등의 정보는 oops\Lumar pear package를 이용하도록 한다.
+ * 정보, 세차/월간/일진등의 정보는 oops\Lunar pear package를 이용하도록 한다.
  *
  * 이 패키지는 pear/Lunar package의 확장을 위하여 제작이 되었으며, 라이센스 문제로
  * pear/Lunar package와 별도의 패키지로 제작이 되었다.
@@ -20,10 +20,9 @@
  * @author      JoungKyun.Kim <http://oops.org>
  * @copyright   (c) 2015 OOPS.org
  * @license     GPL (or Perl license)
- * @version     SVN: $Id$
  * @link        http://pear.oops.org/package/Lnuar
  * @since       File available since release 0.0.1
- * @example     pear_KASI_Lunar/tests/test.php Sample code
+ * @example     KASI-Lunar/tests/test.php Sample code
  * @filesource
  */
 
@@ -53,17 +52,17 @@ require_once 'KASI_Lunar/Lunar_Tables.php';
  * 제공하며, aero님의 Date-Korean-0.0.2 perl module을 PHP로 포팅한 것이다.
  *
  * 양력 기준으로 1391-02-05 부터 2050-12-31 까지의 기간만 가능하며, 절기, 합삭/망
- * 정보, 세차/월간/일진등의 정보는 oops\Lumar pear package를 이용하도록 한다.
+ * 정보, 세차/월간/일진등의 정보는 oops\Lunar pear package를 이용하도록 한다.
  *
  * 이 패키지는 pear/Lunar package의 확장을 위하여 제작이 되었으며, 라이센스 문제로
- * pear/Lunar package와 별도의 패키지로 제작이 되었다.
+ * pear/Lunar package와 별도의 패키지로 제작이 되었다. 물론 독립적으로 사용해도 무방
+ * 하다.
  *
  * @package     oops/KASI/Lunar
  * @author      JoungKyun.Kim <http://oops.org>
  * @copyright   (c) 2015 OOPS.org
  * @license     GPL (or Perl license)
- * @version     SVN: $Id$
- * @example     pear_KASI_Lunar/tests/test.php Sample code
+ * @example     KASI-Lunar/tests/test.php Sample code
  */
 
 class Lunar {
@@ -72,7 +71,7 @@ class Lunar {
 	 * 양력 날자를 음력으로 변환
 	 *
 	 * 예제:
-	 * {@example pear_KASI_Lunar/tests/test.php 21 51}
+	 * {@example KASI-Lunar/tests/test.php 21 51}
 	 *
 	 * @access public
 	 * @return stdClass    음력 날자 정보 반환
@@ -150,7 +149,7 @@ class Lunar {
 	 * 음력 날자를 양력으로 변환.
 	 *
 	 * 예제:
-	 * {@example pear_KASI_Lunar/tests/test.php 21 51}
+	 * {@example KASI-Lunar/tests/test.php 21 51}
 	 *
 	 * @access public
 	 * @return stdClass    양력 날자 정보 object 반환
@@ -363,7 +362,7 @@ class Lunar {
 	 * 입력된 변수 값은 YYYY-MM-DD 형식으로 변환 된다.
 	 *
 	 * 예제:
-	 * {@example pear_Lunar/tests/sample.php 30 25}
+	 * {@example Lunar/tests/sample.php 30 25}
 	 *
 	 * @access public
 	 * @return array
