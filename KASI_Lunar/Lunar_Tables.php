@@ -9,9 +9,8 @@
  * @package     oops\KASI\Lunar
  * @subpackage  oops\KASI\Lunar\Tables
  * @author      JoungKyun.Kim <http://oops.org>
- * @copyright   (c) 2015 OOPS.org
+ * @copyright   (c) 2018, OOPS.org
  * @license     GPL (or Perl license)
- * @version     SVN: $Id$
  * @link        http://pear.oops.org/package/KASI_Lunar
  * @filesource
  */
@@ -29,9 +28,8 @@ namespace oops\KASI;
  * @package     oops\KASI\Lunar
  * @subpackage  oops\KASI\Lunar\Tables
  * @author      JoungKyun.Kim <http://oops.org>
- * @copyright   (c) 2015 OOPS.org
+ * @copyright   (c) 2018, OOPS.org
  * @license     GPL (or Perl license)
- * @version     SVN: $Id$
  */
 Class Tables {
 	static $BaseYear = 1391;

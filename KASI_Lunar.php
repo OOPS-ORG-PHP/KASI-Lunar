@@ -18,7 +18,7 @@
  * @category    Calendar
  * @package     oops\KASI\Lunar
  * @author      JoungKyun.Kim <http://oops.org>
- * @copyright   (c) 2015 OOPS.org
+ * @copyright   (c) 2018, OOPS.org
  * @license     GPL (or Perl license)
  * @link        http://pear.oops.org/package/Lnuar
  * @since       File available since release 0.0.1
@@ -60,7 +60,7 @@ require_once 'KASI_Lunar/Lunar_Tables.php';
  *
  * @package     oops/KASI/Lunar
  * @author      JoungKyun.Kim <http://oops.org>
- * @copyright   (c) 2015 OOPS.org
+ * @copyright   (c) 2018, OOPS.org
  * @license     GPL (or Perl license)
  * @example     KASI-Lunar/tests/test.php Sample code
  */

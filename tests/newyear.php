@@ -1,6 +1,6 @@
 <?php
 /*
- * Test code for pear_KASI_Lunar
+ * Test code for KASI_Lunar
  * $Id$
  *
  * 1842년 부터 2041년까지의 매월 1일을 양력->음력->양력으로
