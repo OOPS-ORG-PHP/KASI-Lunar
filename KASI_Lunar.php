@@ -41,6 +41,7 @@ set_error_handler('myException::myErrorHandler');
  * import Lunar API
  */
 require_once 'KASI_Lunar/Lunar_Tables.php';
+require_once 'KASI_Lunar/Lunar_Seasons.php';
 
 
 /**
@@ -353,6 +354,72 @@ class Lunar {
 
 		return $widx;
 		 */
+	}
+	// }}}
+
+	// {{{ +-- public (object) season ($so, $year = null)
+	/**
+	 * 연도별 절기의 입절시각을 구함
+	 *
+	 * @access public
+	 * @return array|false
+	 *
+	 *   <pre>
+	 *   stdClass Object
+	 *   (
+	 *       [name]   => 입춘             // 절기 이름
+	 *       [hname]  => 立春             // 절기 한지 이름
+	 *       [stamp]  => 1073348340       // 입절시각. Unix timestamp
+	 *       [date]   => 2004-02-04 20:56 // 입절 시각. YYYY-MM-DD HH:mm 형식의 양력 날자
+	 *       [year]   => 2004             // 입절 시각 연도
+	 *       [month]  => 2                // 입절 시각 월
+	 *       [day]    => 4                // 입절 시각 일
+	 *       [hour]   => 20               // 입절 시각 시간
+	 *       [min]    => 56               // 입절 시각 분
+	 *   )
+	 *   </pre>
+	 *
+	 * @param int 연도
+	 * @param string 절기 이름
+	 */
+	public function season ($name, $year = null) {
+		if ( $year == null )
+			$year = date ('%Y', time ());
+
+		if ( $year > 2026 || $year < 2004 ) {
+			throw new \myException (
+				'Support between 2004 and 2026',
+				E_USER_ERROR
+			);
+			return false;
+		}
+
+		$id = array_search ($name, Seasons::$so24n);
+		if ( $id == false ) {
+			throw new \myException (
+				"Invalid Invalid season name ($name).",
+				E_USER_ERROR
+			);
+			return false;
+		}
+		$hid = Seasons::$so24hn[$id];
+		# 절기 배열은 2004년이 첫번째 배열이다.
+		$sid = $year - 2004;
+		$so = Seasons::$so24[$sid][$id];
+
+		$t = preg_split ('/[-]/', date ('Y-m-d-H-i-s', $so));
+
+		return (object) array (
+			'name'  => $name,
+			'hname' => $hid,
+			'stamp' => $so,
+			'date'  => sprintf ("%d-%02d-%02d %02d:%02d", $t[0], $t[1], $t[2], $t[3], $t[4]),
+			'year'  => $t[0],
+			'month' => $t[1],
+			'day'   => $t[2],
+			'hour'  => $t[3],
+			'min'   => $t[4]
+		);
 	}
 	// }}}
 

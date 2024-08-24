@@ -15,6 +15,8 @@ perl module을 PHP로 포팅한 것 입니다.
 정보, 세차/월간/일진등의 정보는 [Lunar](https://github.com/OOPS-ORG-PHP/Lunar/) pear package를
 이용하도록 합니다.
 
+2.0.0 부터 2004년 부터 2026년까지의 천문 과학 연구원의 절기 데이터를 추가 제공 합니다.
+
 이 패키지는 [Lunar](https://github.com/OOPS-ORG-PHP/Lunar/) pear package의 확장을 위하여 제작이
 되었으며, 라이센스 문제로 [Lunar](https://github.com/OOPS-ORG-PHP/Lunar/) pear package와 별도의
 패키지로 제작이 되었습니다. (물론 독립적으로도 사용을 할 수 있습니다.)
@@ -74,6 +76,21 @@ $ment = array (
 echo "-----------------------------------------------------------------------\n";
 
 try {
+	# 절기 정보 확인
+	#   stdClass Object
+	#   (
+	#       [name]  => 입춘
+	#       [hname] => 立春
+	#       [stamp] => 1423022280
+	#       [date]  => 2015-02-04 12:58
+	#       [year]  => 2015
+	#       [month] => 02
+	#       [day]   => 04
+	#       [hour]  => 12
+	#       [min]   => 58
+	#   )
+	print_r ($lunar->season ('입춘', 2015));
+
     $i = 0;
     foreach ( $days as $day ) {
         $l = $lunar->tolunar ($day);
@@ -90,6 +107,7 @@ try {
 -----------------------------------------------------------------------
 
 EOF;
+
     }
 } catch ( Exception $e ) {
     echo $e->Message () . "\n";

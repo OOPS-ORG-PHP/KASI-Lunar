@@ -44,9 +44,30 @@ $ment = array (
 	'유효범위 밖'
 );
 
-echo "-----------------------------------------------------------------------\n";
-
 try {
+	# 절기 정보 확인
+	#   stdClass Object
+	#   (
+	#       [name]  => 입춘
+	#       [hname] => 立春
+	#       [stamp] => 1423022280
+	#       [date]  => 2015-02-04 12:58
+	#       [year]  => 2015
+	#       [month] => 02
+	#       [day]   => 04
+	#       [hour]  => 12
+	#       [min]   => 58
+	#   )
+	$season = $lunar->season ('입춘', 2015);
+	echo "2015년 {$season->name}({$season->hname}) => {$season->stamp} <= 검증값 1423022280 : ";
+	if ( $season->stamp == 1423022280 )
+		echo "OK\n";
+	else
+		echo "FAIL\n";
+	echo "";
+
+	echo "-----------------------------------------------------------------------\n";
+
 	$i = 0;
 	foreach ( $days as $day ) {
 		$l = $lunar->tolunar ($day);
