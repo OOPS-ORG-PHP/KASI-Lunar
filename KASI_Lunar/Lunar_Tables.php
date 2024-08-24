@@ -9,9 +9,9 @@
  * @package     oops\KASI\Lunar
  * @subpackage  oops\KASI\Lunar\Tables
  * @author      JoungKyun.Kim <http://oops.org>
- * @copyright   (c) 2018, OOPS.org
+ * @copyright   (c) 2024, OOPS.org
  * @license     GPL (or Perl license)
- * @link        http://pear.oops.org/package/KASI_Lunar
+ * @link        https://github.com/OOPS-ORG-PHP/KASI-Lunar
  * @filesource
  */
 
@@ -28,7 +28,7 @@ namespace oops\KASI;
  * @package     oops\KASI\Lunar
  * @subpackage  oops\KASI\Lunar\Tables
  * @author      JoungKyun.Kim <http://oops.org>
- * @copyright   (c) 2018, OOPS.org
+ * @copyright   (c) 2024, OOPS.org
  * @license     GPL (or Perl license)
  */
 Class Tables {
