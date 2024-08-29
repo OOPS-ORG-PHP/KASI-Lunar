@@ -76,7 +76,20 @@ class Lunar {
 	 * @var boolean
 	 */
 	public $is_exception = true;
-	/**#@-*
+	/**#@-*/
+	// }}}
+
+	// {{{ +-- public version (void)
+	/**
+	 * KASI_Lunar 의 현재 버전을 출력
+	 *
+	 * @access public
+	 * @return string  KASI_Lunar 버전
+	 */
+	public function version () {
+		# 관리를 위해 꼭 single quote 를 사용한다!
+		return '2.0.1';
+	}
 	// }}}
 
 	// {{{ +-- public (object) tolunar ($v = null)
