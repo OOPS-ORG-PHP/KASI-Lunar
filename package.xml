@@ -11,10 +11,10 @@
 		<email>joungkyun@gmail.com</email>
 		<active>yes</active>
 	</lead>
-	<date>2024-08-25</date>
-	<time>04:28:53</time>
+	<date>2024-08-30</date>
+	<time>05:38:32</time>
 	<version>
-		<release>2.0.0</release>
+		<release>2.0.1</release>
 		<api>2.0.0</api>
 	</version>
 	<stability>
@@ -22,12 +22,13 @@
 		<api>stable</api>
 	</stability>
 	<license uri="http://opensource.org/licenses/GPL-2.0">GPL v2</license>
-	<notes>* add original copyrighter
-* add new season method
+	<notes>- E_USER_ERROR exception 에러 레벨을 E_USER_WARNING 으로 변경
+- exception 을 발생 시킬지 여부를 선택 가능 하도록 oops/KASI/Lunar::$is_exception(boolean) properity 지원 (boolean)
+- oops/KASI/Lunar::version method 추가 :: KASI_Lunar 의 현재 버전을 반환
 </notes>
 	<contents>
 		<dir name="/">
-			<file role="php" md5sum="0c1cc9d1ba0b873e3d3a6d1d5f8e1cbc" name="KASI_Lunar.php" />
+			<file role="php" md5sum="2f51e58dae0b52e7b2d201554ee41524" name="KASI_Lunar.php" />
 			<file role="php" md5sum="0b0335f212a15e0c79a52883351888e3" name="KASI_Lunar/Lunar_Tables.php" />
 			<file role="php" md5sum="881c2049cb49a03c87017f4ef4159b62" name="KASI_Lunar/Lunar_Seasons.php" />
 		</dir>
@@ -53,6 +54,23 @@
 	</dependencies>
 	<phprelease />
 	<changelog>
+		<release>
+			<version>
+				<release>2.0.1</release>
+				<api>2.0.0</api>
+			</version>
+			<stability>
+				<release>stable</release>
+				<api>stable</api>
+			</stability>
+			<date>2024-08-30</date>
+			<license uri="http://opensource.org/licenses/GPL-2.0">GPL v2</license>
+			<notes>- E_USER_ERROR exception 에러 레벨을 E_USER_WARNING 으로 변경
+- exception 을 발생 시킬지 여부를 선택 가능 하도록 oops/KASI/Lunar::$is_exception(boolean) properity 지원 (boolean)
+- oops/KASI/Lunar::season method :: 절기 '소한' 을 찾지 못하는 버그 수정
+- oops/KASI/Lunar::version method 추가 :: KASI_Lunar 의 현재 버전을 반환
+</notes>
+		</release>
 		<release>
 			<version>
 				<release>2.0.0</release>
