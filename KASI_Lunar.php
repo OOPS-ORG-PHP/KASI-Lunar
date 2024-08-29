@@ -413,7 +413,7 @@ class Lunar {
 		}
 
 		$id = array_search ($name, Seasons::$so24n);
-		if ( $id == false ) {
+		if ( $id === false ) {
 			if ( $this->is_exception == true ) {
 				throw new \myException (
 					"Invalid Invalid season name ($name).",
