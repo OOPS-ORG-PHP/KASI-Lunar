@@ -67,6 +67,18 @@ require_once 'KASI_Lunar/Lunar_Seasons.php';
  */
 
 class Lunar {
+	// {{{ +-- public properties
+	/**#@+
+	 * @access public
+	 */
+	/**
+	 * enable exception
+	 * @var boolean
+	 */
+	public $is_exception = true;
+	/**#@-*
+	// }}}
+
 	// {{{ +-- public (object) tolunar ($v = null)
 	/**
 	 * 양력 날자를 음력으로 변환
@@ -103,10 +115,12 @@ class Lunar {
 		$jd = $this->cal2jd (array ($y, $m, $d));
 
 		if ( $jd < Tables::$MinDate || $jd > Tables::$MaxDate ) {
-			throw new \myException (
-				'Invalid date period. Valid period is from 1391-02-05 to 2050-12-31 with solar',
-				E_USER_ERROR
-			);
+			if ( $this->is_exception == true ) {
+				throw new \myException (
+					'Invalid date period. Valid period is from 1391-02-05 to 2050-12-31 with solar',
+					E_USER_WARNING
+				);
+			}
 			return false;
 		}
 
@@ -193,7 +207,7 @@ class Lunar {
 
 		$day = Tables::$month[$month] + $d - 1;
 		if ( $d < 1 || $day >= Tables::$month[$month+1] ) {
-			throw new \myException ('Invalid day', E_USER_ERROR);
+			throw new \myException ('Invalid day', E_USER_WARNING);
 			return false;
 		}
 
@@ -221,7 +235,8 @@ class Lunar {
 	 */
 	public function cal2jd ($v) {
 		if ( ! extension_loaded ('calendar') ) {
-			throw new \myException ('Don\'t support the calendar extension in PHP', E_USER_ERROR);
+			if ( $this->is_exception == true )
+				throw new \myException ('Don\'t support the calendar extension in PHP', E_USER_WARNING);
 			return false;
 		}
 
@@ -303,7 +318,8 @@ class Lunar {
 	 */
 	public function jd2cal ($jd = null) {
 		if ( ! extension_loaded ('calendar') ) {
-			throw new \myException ('Don\'t support the calendar extension in PHP', E_USER_ERROR);
+			if ( $this->is_exception == true )
+				throw new \myException ('Don\'t support the calendar extension in PHP', E_USER_WARNING);
 			return false;
 		}
 
@@ -387,19 +403,23 @@ class Lunar {
 			$year = date ('%Y', time ());
 
 		if ( $year > 2026 || $year < 2004 ) {
-			throw new \myException (
-				'Support between 2004 and 2026',
-				E_USER_ERROR
-			);
+			if ( $this->is_exception == true ) {
+				throw new \myException (
+					'Support between 2004 and 2026',
+					E_USER_WARNING
+				);
+			}
 			return false;
 		}
 
 		$id = array_search ($name, Seasons::$so24n);
 		if ( $id == false ) {
-			throw new \myException (
-				"Invalid Invalid season name ($name).",
-				E_USER_ERROR
-			);
+			if ( $this->is_exception == true ) {
+				throw new \myException (
+					"Invalid Invalid season name ($name).",
+					E_USER_WARNING
+				);
+			}
 			return false;
 		}
 		$hid = Seasons::$so24hn[$id];
@@ -467,7 +487,8 @@ class Lunar {
 					array_shift ($match);
 					list ($y, $m, $d) = $match;
 				} else {
-					throw new \myException ('Invalid Date Format', E_USER_WARNING);
+					if ( $this->is_exception == true )
+						throw new \myException ('Invalid Date Format', E_USER_WARNING);
 					return false;
 				}
 			}
@@ -479,7 +500,8 @@ class Lunar {
 				$d = (int) date ('d', $fixed);
 			} else {
 				if ( $m > 12 || $d > 31 ) {
-					throw new \myException ('Invalid Date Format', E_USER_WARNING);
+					if ( $this->is_exception == true )
+						throw new \myException ('Invalid Date Format', E_USER_WARNING);
 					return false;
 				}
 			}
